@@ -4,7 +4,7 @@
 	$currentPage = $_REQUEST['currentPage'];
 	$pageRows = $_REQUEST['pageRows'];
 	//类型ID
-	$eventId = $_REQUEST['eventId'];
+	$eventId = htmlspecialchars($_REQUEST['eventId']);
 	$sql = "select id,title,originalPrice,currentPrice,imgsrc,comment,ishot from shop_goods ";
 	if($eventId!=""){
 		$sql .=" where saleid='".$eventId."'";

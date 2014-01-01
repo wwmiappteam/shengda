@@ -4,11 +4,11 @@
 	$currentPage = $_REQUEST['currentPage'];
 	$pageRows = $_REQUEST['pageRows'];
 	//类型ID
-	$typeId = $_REQUEST['typeId'];
+	$typeId = htmlspecialchars($_REQUEST['typeId']);
 	//品牌ID
-	$brandId = $_REQUEST['brandId'];
+	$brandId = htmlspecialchars($_REQUEST['brandId']);
 	//商品名称
-	$appliancesName = $_REQUEST['appliancesName'];
+	$appliancesName = htmlspecialchars($_REQUEST['appliancesName']);
 	
 	$sql = "select id,title,originalPrice,currentPrice,imgsrc,comment,ishot,isnew,canshu from shop_goods ";
 	$where = array();
